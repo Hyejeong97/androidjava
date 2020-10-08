@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<script type="text/javascript" src="js/jquery-3.5.1.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$('#b1').click(function(){
+				
+				$.ajax({ // 비동기통신
+					url: "call2.jsp",
+					data:{
+						score: $('#score').val()
+						// 값으로 인식하기 위해서 ""로 감싼다
+						//""로 감싸야 변수로 인식하지 않고 헷갈린 것이 없음
+					},
+					success: function(result) {
+						console.log("받은 데이터: " + result)
+						if(result == '최우수' || result == '우수'){
+							alert('통과!')
+						}else{
+							alert('재시험!')
+						}
+					}
+				})
+			})
+			
+		})
+	
+	</script>
+
+</head>
+<body>
+	당신의 성적은 <input type="text" id="score">
+	<button id="b1">입력</button>
+</body>
+</html>
