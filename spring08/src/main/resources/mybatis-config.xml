@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+   <typeAliases>
+      <typeAlias type="com.mega.mvc08.ProductVO" alias="productVO"></typeAlias>
+      <!-- 간단하게 별명 만들어 준 것 -->
+   </typeAliases>
+   <mappers>
+      <mapper resource="mapper/product-mapper.xml" />
+      <!-- mapper가 여러개면 mapper resources도 여러개 
+      		factory 역할 -->
+   </mappers>
+</configuration>

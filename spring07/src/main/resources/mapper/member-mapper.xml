@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="member"> <!-- member 테이블에서 -->
+<insert id="insert" parameterType="memberVO"><!-- insert 처리해주라~!~! -->
+<!-- parameterType : 입력할 때 -->
+<!-- resultType : 결과가 있을 때 -->
+	insert into member1 values(#{id}, #{pw}, #{name}, #{tel})<!-- # 넣어주는게 빠름-->
+</insert>
+
+<update id="update" parameterType="memberVO">
+	update member1 set tel = #{tel} where id = #{id} 
+</update>
+
+<delete id="delete" parameterType="memberVO">
+	delete from member1 where id = #{id}
+</delete>
+
+<select id="one" parameterType="memberVO" resultType="memberVO">
+	select * from member1 where id = #{id}
+</select>
+
+<select id="list" resultType="memberVO">
+	select * from member1 
+</select>
+
+</mapper>
